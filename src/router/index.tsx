@@ -1,5 +1,5 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom';
-import { HomePage, DocPage } from '../pages';
+import { HomePage, DocPage, InstallationPage, QuickStartPage } from '../pages';
 
 export const router = () =>
   createBrowserRouter([
@@ -13,6 +13,17 @@ export const router = () =>
         {
           path: 'doc',
           element: <DocPage />,
+          children: [
+            {
+              index: true,
+              // path: 'installation',
+              element: <InstallationPage />,
+            },
+            {
+              path: 'quick-start',
+              element: <QuickStartPage />,
+            },
+          ],
         },
       ],
     },
