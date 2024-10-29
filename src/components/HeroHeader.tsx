@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import heroImage from '../assets/hero-image.jpg';
+import { Link } from 'react-router-dom';
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -19,11 +20,6 @@ export const HeroHeader = () => {
           alt=""
           src={heroImage}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
-          style={
-            {
-              // opacity: '.2',
-            }
-          }
         />
         <div
           style={{
@@ -62,12 +58,12 @@ export const HeroHeader = () => {
               </p>
 
               <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
+                <Link
+                  to="/doc"
                   className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                 >
                   Get started
-                </a>
+                </Link>
               </div>
             </div>
           </div>
