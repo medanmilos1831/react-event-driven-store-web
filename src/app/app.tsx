@@ -1,11 +1,9 @@
-import NxWelcome from './nx-welcome';
+import { HeroHeader } from '../components';
 
-export function App() {
+export const App = () => {
   return (
-    <div>
-      <NxWelcome title="react-event-driven-store-web" />
+    <div className="h-screen w-screen">
+      <HeroHeader />
     </div>
   );
-}
-
-export default App;
+};
