@@ -14,7 +14,9 @@
     "heroicons": "^2.1.5",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "react-router-dom": "^6.27.0"
+    "react-event-driven-store": "^1.0.7",
+    "react-router-dom": "^6.27.0",
+    "react-syntax-highlighter": "^15.6.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.8.0",
@@ -33,6 +35,7 @@
     "@types/node": "18.16.9",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
+    "@types/react-syntax-highlighter": "^15.5.13",
     "@vitejs/plugin-react": "^4.2.0",
     "@vitest/coverage-v8": "^1.0.4",
     "@vitest/ui": "^1.3.1",

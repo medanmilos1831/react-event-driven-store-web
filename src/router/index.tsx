@@ -1,5 +1,12 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom';
-import { HomePage, DocPage, InstallationPage, QuickStartPage } from '../pages';
+import {
+  HomePage,
+  DocPage,
+  InstallationPage,
+  QuickStartPage,
+  EventStoreProviderPage,
+} from '../pages';
+import { EventStoreProvider } from 'react-event-driven-store';
 
 export const router = () =>
   createBrowserRouter([
@@ -16,12 +23,15 @@ export const router = () =>
           children: [
             {
               index: true,
-              // path: 'installation',
               element: <InstallationPage />,
             },
             {
               path: 'quick-start',
               element: <QuickStartPage />,
+            },
+            {
+              path: 'event-store-provider',
+              element: <EventStoreProviderPage />,
             },
           ],
         },

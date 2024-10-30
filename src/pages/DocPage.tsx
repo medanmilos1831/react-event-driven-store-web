@@ -20,22 +20,19 @@ import {
   DialogPanel,
   TransitionChild,
 } from '@headlessui/react';
-import {
-  Bars3Icon,
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-  XMarkIcon,
-} from '@heroicons/react/24/outline';
+import { HomeIcon, UsersIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import { Scroll } from '../components';
 
 const navigation = [
   { name: 'Installation', to: '', icon: HomeIcon, current: true },
   { name: 'Quick Start', to: 'quick-start', icon: UsersIcon, current: false },
+  {
+    name: 'Event Store Provider',
+    to: 'event-store-provider',
+    icon: UsersIcon,
+  },
 ];
 
 function classNames(...classes: any) {
@@ -47,14 +44,6 @@ export const DocPage = () => {
 
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div className="h-full w-full">
         <Dialog
           open={sidebarOpen}
@@ -168,12 +157,21 @@ export const DocPage = () => {
           </div>
         </div>
 
-        <div className="lg:pl-72 h-full">
-          <main className="py-10">
-            <div className="px-4 sm:px-6 lg:px-8">
-              <Outlet />
+        <div className="w-full h-full relative">
+          <Scroll>
+            <div className="lg:pl-72">
+              <main
+                className="py-10 w-full"
+                style={{
+                  backgroundColor: '#030712',
+                }}
+              >
+                <div className="px-4 sm:px-6 lg:px-20 w-full">
+                  <Outlet />
+                </div>
+              </main>
             </div>
-          </main>
+          </Scroll>
         </div>
       </div>
     </>
