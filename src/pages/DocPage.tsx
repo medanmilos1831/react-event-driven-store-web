@@ -43,6 +43,11 @@ const navigation = [
     to: 'selector',
     icon: UsersIcon,
   },
+  {
+    name: 'Event emitter',
+    to: 'event-emitter',
+    icon: UsersIcon,
+  },
 ];
 
 function classNames(...classes: any) {
