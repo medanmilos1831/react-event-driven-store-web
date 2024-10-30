@@ -38,6 +38,11 @@ const navigation = [
     to: 'mutations',
     icon: UsersIcon,
   },
+  {
+    name: 'Selector',
+    to: 'selector',
+    icon: UsersIcon,
+  },
 ];
 
 function classNames(...classes: any) {

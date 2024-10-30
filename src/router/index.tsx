@@ -6,6 +6,7 @@ import {
   QuickStartPage,
   EventStoreProviderPage,
   MutationsPage,
+  SelectorPage,
 } from '../pages';
 
 export const router = () =>
@@ -36,6 +37,10 @@ export const router = () =>
             {
               path: 'mutations',
               element: <MutationsPage />,
+            },
+            {
+              path: 'selector',
+              element: <SelectorPage />,
             },
           ],
         },
