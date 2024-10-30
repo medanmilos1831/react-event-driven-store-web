@@ -33,6 +33,11 @@ const navigation = [
     to: 'event-store-provider',
     icon: UsersIcon,
   },
+  {
+    name: 'Mutations',
+    to: 'mutations',
+    icon: UsersIcon,
+  },
 ];
 
 function classNames(...classes: any) {

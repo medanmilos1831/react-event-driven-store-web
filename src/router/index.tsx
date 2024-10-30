@@ -5,8 +5,8 @@ import {
   InstallationPage,
   QuickStartPage,
   EventStoreProviderPage,
+  MutationsPage,
 } from '../pages';
-import { EventStoreProvider } from 'react-event-driven-store';
 
 export const router = () =>
   createBrowserRouter([
@@ -32,6 +32,10 @@ export const router = () =>
             {
               path: 'event-store-provider',
               element: <EventStoreProviderPage />,
+            },
+            {
+              path: 'mutations',
+              element: <MutationsPage />,
             },
           ],
         },

@@ -5,7 +5,6 @@ export const App = () => {
   return (
     <div className="h-screen w-screen">
       <RouterProvider router={router()} />
-      {/* <HeroHeader /> */}
     </div>
   );
 };
