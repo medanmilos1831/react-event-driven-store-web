@@ -8,6 +8,7 @@ import {
   MutationsPage,
   SelectorPage,
   EventEmitter,
+  ExamplePage,
 } from '../pages';
 
 export const router = () =>
@@ -46,6 +47,10 @@ export const router = () =>
             {
               path: 'event-emitter',
               element: <EventEmitter />,
+            },
+            {
+              path: 'example',
+              element: <ExamplePage />,
             },
           ],
         },

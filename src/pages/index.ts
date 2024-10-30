@@ -6,3 +6,4 @@ export * from './EventStoreProviderPage/EventStoreProviderPage';
 export * from './MutationsPage/MutationsPage';
 export * from './SelectorPage/SelectorPage';
 export * from './EventEmitter/EventEmitter';
+export * from './ExamplePage/ExamplePage';
