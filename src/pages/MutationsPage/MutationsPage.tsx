@@ -1,46 +1,46 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { mutationCode } from '../../codes/mutationCode';
-import { MutatonDetails } from './MutatonDetails';
+import {
+  ContentWrapper,
+  SyntaxHighlighterWrapper,
+  TableWrapper,
+} from '../../components';
 
 export const MutationsPage = () => {
   return (
     <div>
       <div className="h-full w-full relative">
-        <h2 className="text-white font-bold text-2xl border-b pb-5 mb-5 border-gray-100/20">
-          Managing Mutations
-        </h2>
-        <p className="text-gray-300 mb-4">
-          In this section, we'll explore how to manage mutations within your
-          application. Mutations are essential for updating your module's state
-          in a predictable manner. By utilizing the{' '}
-          <code className="bg-gray-800 text-gray-200 px-1 rounded">
-            useModuleMutation
-          </code>{' '}
-          hook, you can easily trigger state changes with minimal effort.
-        </p>
-        <p className="text-gray-300 mb-4">
-          Below is an example of how to implement a mutation that increments a
+        <ContentWrapper
+          headline="Managing Mutations"
+          paragraph="In this section, we'll explore how to manage mutations within your application. Mutations are essential for updating your module's state in a predictable manner. By utilizing the useModuleMutation hook, you can easily trigger state changes with minimal effort. Below is an example of how to implement a mutation that increments a
           counter in your application. This code snippet illustrates the usage
-          of the{' '}
-          <code className="bg-gray-800 text-gray-200 px-1 rounded">mutate</code>{' '}
-          function, allowing you to define the payload and event type
-          effectively.
-        </p>
-        <SyntaxHighlighter
-          customStyle={{
-            fontSize: '.75rem',
-          }}
-          language="javascript"
-          style={nightOwl}
-        >
-          {mutationCode}
-        </SyntaxHighlighter>
+          of the mutate function, allowing you to define the payload and event type
+          effectively."
+        />
+        <SyntaxHighlighterWrapper codeString={mutationCode} />
       </div>
-      <h3 className="text-2xl font-semibold mb-4 text-white">
-        Properties of mutate
-      </h3>
-      <MutatonDetails />
+      <TableWrapper
+        headline="Properties of mutate"
+        list={[
+          {
+            property: 'payload',
+            type: 'any',
+            description:
+              'The value to be passed to the mutation. This represents the data that will be used to update the state.',
+          },
+          {
+            property: 'event',
+            type: 'string',
+            description:
+              'An optional event that is triggered by this mutation. It indicates the specific action being performed.',
+          },
+          {
+            property: 'commit',
+            type: 'string',
+            description:
+              'The name of the function to execute when the mutation is committed to the module. It defines the operation to be performed.',
+          },
+        ]}
+      />
     </div>
   );
 };

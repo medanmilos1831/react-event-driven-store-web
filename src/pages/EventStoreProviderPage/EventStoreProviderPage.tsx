@@ -1,41 +1,77 @@
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/hljs';
-import { quickStartCode } from '../../codes/quickStartCode';
 import { eventStoreProviderCode } from '../../codes/eventStoreProviderCode';
-import { IntroText } from './IntroText';
-import { PropertiesTable } from './PropertiesTable';
-import { ModuleInterfaceTable } from './ModuleInterfaceTable';
-import { GenericTypeModule } from './GenericTypeModule';
+import {
+  ContentWrapper,
+  SyntaxHighlighterWrapper,
+  TableWrapper,
+} from '../../components';
 export const EventStoreProviderPage = () => {
   return (
     <div className="h-full w-full relative">
-      <h2 className="text-3xl font-bold mb-4 text-white">
-        EventStoreProvider Overview
-      </h2>
-      <IntroText />
-      <SyntaxHighlighter
-        customStyle={{
-          fontSize: '.75rem',
-          marginBottom: '1rem',
-        }}
-        language="javascript"
-        style={nightOwl}
-      >
-        {eventStoreProviderCode}
-      </SyntaxHighlighter>
+      <ContentWrapper
+        headline="EventStoreProvider Overview"
+        paragraph={`The EventStoreProvider is the foundation of our service, designed to streamline and centralize
+      state management across your application. It allows you to configure state
+      modules with mutations and getters, enabling your components to interact
+      with shared data effortlessly. Each module can define its own state,
+      mutations, and getters, while plain JavaScript objects ensure simplicity
+      and flexibility. Whether you’re working with basic state or requiring
+      advanced updates and custom data accessors, EventStoreProvider provides a
+      structured yet adaptable framework for smooth, organized state
+      interactions across your app.`}
+      />
+      <SyntaxHighlighterWrapper codeString={eventStoreProviderCode} />
 
-      <h3 className="text-2xl font-semibold mb-4 text-white">
-        Properties of EventStoreProvider
-      </h3>
-      <PropertiesTable />
+      <TableWrapper
+        headline="Properties of EventStoreProvider"
+        list={[
+          {
+            property: 'modules',
+            type: 'ModuleType',
+            description:
+              'The modules array is crucial for defining distinct segments of the application state. Each module has a unique moduleName, facilitating organized management of related functionality. This modular approach enhances maintainability and scalability, making it easier to manage code and develop complex applications.',
+          },
+        ]}
+      />
 
-      <h2 className="text-2xl font-semibold text-white mb-4">
-        Modules Interface
-      </h2>
+      <TableWrapper
+        headline="Modules Interface"
+        list={[
+          {
+            property: 'moduleName',
+            description:
+              'A unique identifier for the module, allowing for clear differentiation between various modules within the application.',
+            type: 'string',
+          },
+          {
+            property: 'state',
+            description:
+              'The initial state of the module, defined as a plain JavaScript object. This state can be modified through mutations.',
+            type: 'unknown',
+          },
+          {
+            property: 'mutation',
+            description:
+              'Defines functions to change the state of the module. Mutations are essential for modifying state in a predictable manner.',
+            type: '{ [key: string]: (this: unknown, args: any) => void } | undefined',
+          },
+          {
+            property: 'getters',
+            description:
+              'Functions that retrieve specific pieces of state. Getters allow for organized access to state values from components.',
+            type: '{ [key: string]: (this: unknown) => any }',
+          },
+        ]}
+      />
 
-      <ModuleInterfaceTable />
-
-      <GenericTypeModule />
+      <ContentWrapper
+        headline="Generic Type Safety"
+        paragraph={`The EventStoreProvider is designed as a generic component, allowing you to specify the
+              type of the module when creating an instance. By using a syntax
+              like, you can achieve type safety throughout your application. This means that the state and methods defined in the ICounter interface will be strictly enforced, preventing errors related to
+              type mismatches and ensuring that your components interact with
+              the module's state and methods correctly. Overall, utilizing generic types in the EventStoreProvider enhances code reliability and maintainability by providing clear
+              contracts for module behavior.`}
+      />
     </div>
   );
 };

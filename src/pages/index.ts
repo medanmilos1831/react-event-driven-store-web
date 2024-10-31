@@ -5,5 +5,5 @@ export * from './QuickStartPage';
 export * from './EventStoreProviderPage/EventStoreProviderPage';
 export * from './MutationsPage/MutationsPage';
 export * from './SelectorPage/SelectorPage';
-export * from './EventEmitter/EventEmitter';
+export * from './EventEmitterPage/EventEmitterPage';
 export * from './ExamplePage/ExamplePage';

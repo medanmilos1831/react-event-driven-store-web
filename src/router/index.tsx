@@ -7,7 +7,7 @@ import {
   EventStoreProviderPage,
   MutationsPage,
   SelectorPage,
-  EventEmitter,
+  EventEmitterPage,
   ExamplePage,
 } from '../pages';
 
@@ -46,7 +46,7 @@ export const router = () =>
             },
             {
               path: 'event-emitter',
-              element: <EventEmitter />,
+              element: <EventEmitterPage />,
             },
             {
               path: 'example',
