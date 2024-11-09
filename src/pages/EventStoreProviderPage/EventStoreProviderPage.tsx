@@ -67,9 +67,7 @@ export const EventStoreProviderPage = () => {
         headline="Generic Type Safety"
         paragraph={`The EventStoreProvider is designed as a generic component, allowing you to specify the
               type of the module when creating an instance. By using a syntax
-              like, you can achieve type safety throughout your application. This means that the state and methods defined in the ICounter interface will be strictly enforced, preventing errors related to
-              type mismatches and ensuring that your components interact with
-              the module's state and methods correctly. Overall, utilizing generic types in the EventStoreProvider enhances code reliability and maintainability by providing clear
+              like, you can achieve type safety throughout your application. Overall, utilizing generic types in the EventStoreProvider enhances code reliability and maintainability by providing clear
               contracts for module behavior.`}
       />
     </div>

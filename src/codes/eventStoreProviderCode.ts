@@ -1,38 +1,36 @@
 export const eventStoreProviderCode = `
 import { EventStoreProvider } from 'react-event-driven-store';
 
+interface ICounter {
+  counter: number;
+}
+
 const App = () => {
   return (
       <EventStoreProvider<[ModuleType<ICounter>]>
-        modules={[
-          {
-            moduleName: 'counter',
-            // Initial state for the 'counter' module
-            state: {
-              counter: 0,
+      modules={[
+        {
+          moduleName: 'counter',
+          state: {
+            counter: 0,
+          },
+          mutation: {
+            inc(value) {
+              this.counter = this.counter + value.payload;
             },
-            mutation: { 
-              // Mutation to increment the counter
-              inc(value) {
-                this.counter = this.counter + value.payload;
-              },
-              // Mutation to decrement the counter
-              dec() {
-                this.counter = this.counter - 1;
-              },
-            },
-            getters: {
-              // Getter to return the current counter value
-              getCounter() {
-                return {
-                  counter: this.counter,
-                };
-              },
+            dec() {
+              this.counter = this.counter - 1;
             },
           },
-        ]}
-      >
-        <CounterComponent />
-      </EventStoreProvider>
+          getters: {
+            getCounter() {
+              return this.counter;
+            },
+          },
+        },
+      ]}
+    >
+      {/* UI */}
+    </EventStoreProvider>
   );
 };`;

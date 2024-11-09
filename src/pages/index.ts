@@ -7,3 +7,4 @@ export * from './MutationsPage/MutationsPage';
 export * from './SelectorPage/SelectorPage';
 export * from './EventEmitterPage/EventEmitterPage';
 export * from './ExamplePage/ExamplePage';
+export * from './NotFound';

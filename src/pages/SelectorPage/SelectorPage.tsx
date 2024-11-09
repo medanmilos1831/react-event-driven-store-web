@@ -30,7 +30,7 @@ export const SelectorPage = () => {
                 'The name of the function used to retrieve the desired state from the module.',
             },
             {
-              property: 'events',
+              property: 'updateOnEvents',
               type: 'string[]',
               description:
                 'An array of strings representing the events associated with the module. These commits can be dispatched to trigger state updates.',

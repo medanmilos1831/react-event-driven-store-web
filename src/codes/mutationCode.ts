@@ -1,17 +1,18 @@
 export const mutationCode = `export const SomeComponent = () => {
-  const { mutate } = useModuleMutation('counter');
+  const { mutateState } = useStateMutation();
   return (
     <>
       <button
-        onClick={() =>
-          mutate({
+        onClick={() => {
+          mutateState({
             payload: 1,
             event: 'INC',
             commit: 'inc',
-          })
-        }
+            moduleName: 'counter',
+          });
+        }}
       >
-        Increment age
+        Increment Counter
       </button>
     </>
   );

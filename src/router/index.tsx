@@ -9,6 +9,7 @@ import {
   SelectorPage,
   EventEmitterPage,
   ExamplePage,
+  NotFound,
 } from '../pages';
 
 export const router = () =>
@@ -21,11 +22,11 @@ export const router = () =>
           element: <HomePage />,
         },
         {
-          path: 'doc',
+          path: '/doc',
           element: <DocPage />,
           children: [
             {
-              index: true,
+              path: 'installation',
               element: <InstallationPage />,
             },
             {
@@ -52,7 +53,19 @@ export const router = () =>
               path: 'example',
               element: <ExamplePage />,
             },
+            {
+              index: true,
+              element: <NotFound />,
+            },
+            {
+              path: '*',
+              element: <NotFound />,
+            },
           ],
+        },
+        {
+          path: '/doc/*',
+          element: <NotFound />,
         },
       ],
     },

@@ -39,6 +39,12 @@ export const MutationsPage = () => {
             description:
               'The name of the function to execute when the mutation is committed to the module. It defines the operation to be performed.',
           },
+          {
+            property: 'moduleName',
+            type: 'string',
+            description:
+              'A unique identifier for the module, allowing for clear differentiation between various modules within the application.',
+          },
         ]}
       />
     </div>

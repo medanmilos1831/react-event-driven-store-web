@@ -1,32 +1,27 @@
 import { HomeIcon, UsersIcon } from '@heroicons/react/24/outline';
 import { NavLink } from 'react-router-dom';
 const navigation = [
-  { name: 'Installation', to: '', icon: HomeIcon, current: true },
-  { name: 'Quick Start', to: 'quick-start', icon: UsersIcon, current: false },
+  { name: 'Installation', to: 'installation' },
+  { name: 'Quick Start', to: 'quick-start' },
   {
     name: 'Event Store Provider',
     to: 'event-store-provider',
-    icon: UsersIcon,
   },
   {
     name: 'Mutations',
     to: 'mutations',
-    icon: UsersIcon,
   },
   {
     name: 'Selector',
     to: 'selector',
-    icon: UsersIcon,
   },
   {
     name: 'Event emitter',
     to: 'event-emitter',
-    icon: UsersIcon,
   },
   {
     name: 'Example',
     to: 'example',
-    icon: UsersIcon,
   },
 ];
 export const SideBar = () => {
@@ -48,6 +43,7 @@ export const SideBar = () => {
                   <li key={item.name}>
                     <NavLink to={item.to}>
                       {({ isActive }) => {
+                        console.log('dddd', isActive);
                         return (
                           <span
                             className={`${

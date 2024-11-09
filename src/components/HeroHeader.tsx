@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Dialog, DialogPanel } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import heroImage from '../assets/hero-image.jpg';
+import pera from '../assets/pera.png';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -18,7 +19,7 @@ export const HeroHeader = () => {
       <div className="relative isolate overflow-hidden pt-14 h-full">
         <img
           alt=""
-          src={heroImage}
+          src={pera}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div
@@ -59,7 +60,7 @@ export const HeroHeader = () => {
 
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
-                  to="/doc"
+                  to="/doc/installation"
                   className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                 >
                   Get started

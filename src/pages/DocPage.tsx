@@ -49,7 +49,7 @@ export const DocPage = () => {
   return (
     <>
       <div className="h-full w-full">
-        <Dialog
+        {/* <Dialog
           open={sidebarOpen}
           onClose={setSidebarOpen}
           className="relative z-50 lg:hidden"
@@ -79,7 +79,6 @@ export const DocPage = () => {
                   </button>
                 </div>
               </TransitionChild>
-              {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-900 px-6 pb-4 ring-1 ring-white/10">
                 <div className="flex h-16 shrink-0 items-center">
                   <img
@@ -118,9 +117,8 @@ export const DocPage = () => {
               </div>
             </DialogPanel>
           </div>
-        </Dialog>
+        </Dialog> */}
 
-        {/* Static sidebar for desktop */}
         <SideBar />
 
         <div className="w-full h-full relative">
