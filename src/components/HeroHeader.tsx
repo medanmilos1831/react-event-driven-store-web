@@ -1,25 +1,13 @@
-import { useState } from 'react';
-import { Dialog, DialogPanel } from '@headlessui/react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-import heroImage from '../assets/hero-image.jpg';
-import pera from '../assets/pera.png';
 import { Link } from 'react-router-dom';
-
-const navigation = [
-  { name: 'Product', href: '#' },
-  { name: 'Features', href: '#' },
-  { name: 'Marketplace', href: '#' },
-  { name: 'Company', href: '#' },
-];
+import heroImage from '../assets/hero-image.jpg';
 
 export const HeroHeader = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   return (
     <div className="bg-gray-900 h-full w-full">
       <div className="relative isolate overflow-hidden pt-14 h-full">
         <img
           alt=""
-          src={pera}
+          src={heroImage}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
         />
         <div

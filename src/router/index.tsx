@@ -11,60 +11,70 @@ import {
   ExamplePage,
   NotFound,
 } from '../pages';
+import { Scroll, SideBar } from '../components';
 
 export const router = () =>
   createBrowserRouter([
     {
-      element: <Outlet />,
+      element: (
+        <div className="h-full w-full">
+          <SideBar />
+
+          <div className="w-full h-full relative">
+            <div className="lg:pl-72 h-full">
+              <main
+                className="py-10 w-full h-full"
+                style={{
+                  backgroundColor: '#030712',
+                }}
+              >
+                <Scroll>
+                  <div className="px-4 sm:px-6 lg:px-20 w-full h-full">
+                    <Outlet />
+                  </div>
+                </Scroll>
+              </main>
+            </div>
+          </div>
+        </div>
+      ),
+      path: '/',
       children: [
         {
+          path: '/',
           index: true,
-          element: <HomePage />,
+          element: <InstallationPage />,
         },
         {
-          path: '/doc',
-          element: <DocPage />,
-          children: [
-            {
-              path: 'installation',
-              element: <InstallationPage />,
-            },
-            {
-              path: 'quick-start',
-              element: <QuickStartPage />,
-            },
-            {
-              path: 'event-store-provider',
-              element: <EventStoreProviderPage />,
-            },
-            {
-              path: 'mutations',
-              element: <MutationsPage />,
-            },
-            {
-              path: 'selector',
-              element: <SelectorPage />,
-            },
-            {
-              path: 'event-emitter',
-              element: <EventEmitterPage />,
-            },
-            {
-              path: 'example',
-              element: <ExamplePage />,
-            },
-            {
-              index: true,
-              element: <NotFound />,
-            },
-            {
-              path: '*',
-              element: <NotFound />,
-            },
-          ],
+          path: 'quick-start',
+          element: <QuickStartPage />,
         },
         {
-          path: '/doc/*',
+          path: 'event-store-provider',
+          element: <EventStoreProviderPage />,
+        },
+        {
+          path: 'mutations',
+          element: <MutationsPage />,
+        },
+        {
+          path: 'selector',
+          element: <SelectorPage />,
+        },
+        {
+          path: 'event-emitter',
+          element: <EventEmitterPage />,
+        },
+        {
+          path: 'example',
+          element: <ExamplePage />,
+        },
+        {
+          index: true,
+          element: <NotFound />,
+        },
+        {
+          path: '/*',
           element: <NotFound />,
         },
       ],
