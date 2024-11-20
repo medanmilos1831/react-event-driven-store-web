@@ -1,13 +1,14 @@
 {
-  "name": "@react-event-driven-store-web/source",
+  "name": "react-event-driven-store-web",
   "homepage": "https://medanmilos183.github.io/react-event-driven-store-web",
   "version": "0.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run dist",
+    "deploy": "gh-pages -d dist"
   },
   "private": true,
   "dependencies": {
