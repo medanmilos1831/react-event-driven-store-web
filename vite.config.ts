@@ -20,6 +20,7 @@ export default defineConfig({
   // worker: {
   //  plugins: [ nxViteTsPaths() ],
   // },
+  base: '/react-event-driven-store-web',
   build: {
     outDir: './dist/react-event-driven-store-web',
     emptyOutDir: true,
