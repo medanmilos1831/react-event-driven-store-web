@@ -30,6 +30,11 @@ export const EventStoreProviderPage = () => {
             description:
               'The modules array is crucial for defining distinct segments of the application state. Each module has a unique moduleName, facilitating organized management of related functionality. This modular approach enhances maintainability and scalability, making it easier to manage code and develop complex applications.',
           },
+          {
+            property: 'logs',
+            type: 'boolean',
+            description: `This prop activates logging of events to the browser's console`,
+          },
         ]}
       />
 
