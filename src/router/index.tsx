@@ -9,7 +9,7 @@ import {
   ExamplePage,
   NotFound,
 } from '../pages';
-import { Scroll, SideBar } from '../components';
+import { SideBar } from '../components';
 
 export const router = () =>
   createBrowserRouter(
@@ -27,11 +27,9 @@ export const router = () =>
                     backgroundColor: '#030712',
                   }}
                 >
-                  <Scroll>
-                    <div className="px-4 sm:px-6 lg:px-20 w-full h-full">
-                      <Outlet />
-                    </div>
-                  </Scroll>
+                  <div className="w-full h-full">
+                    <Outlet />
+                  </div>
                 </main>
               </div>
             </div>

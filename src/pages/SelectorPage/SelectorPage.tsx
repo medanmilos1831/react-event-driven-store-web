@@ -1,14 +1,15 @@
 import { selectorCode } from '../../codes/selectorCode';
 import {
   ContentWrapper,
+  Scroll,
   SyntaxHighlighterWrapper,
   TableWrapper,
 } from '../../components';
 
 export const SelectorPage = () => {
   return (
-    <div>
-      <div className="h-full w-full relative">
+    <div className="h-full w-full relative">
+      <Scroll>
         <ContentWrapper
           headline="Managing Selectors"
           paragraph="In this section, we will delve into the usage of selectors within your
@@ -64,7 +65,7 @@ export const SelectorPage = () => {
           user experience by avoiding re-renders of elements where state changes
           are irrelevant."
         />
-      </div>
+      </Scroll>
     </div>
   );
 };
