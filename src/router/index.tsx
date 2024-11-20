@@ -1,7 +1,5 @@
 import { Outlet, createBrowserRouter } from 'react-router-dom';
 import {
-  HomePage,
-  DocPage,
   InstallationPage,
   QuickStartPage,
   EventStoreProviderPage,
@@ -14,69 +12,74 @@ import {
 import { Scroll, SideBar } from '../components';
 
 export const router = () =>
-  createBrowserRouter([
-    {
-      element: (
-        <div className="h-full w-full">
-          <SideBar />
+  createBrowserRouter(
+    [
+      {
+        element: (
+          <div className="h-full w-full">
+            <SideBar />
 
-          <div className="w-full h-full relative">
-            <div className="lg:pl-72 h-full">
-              <main
-                className="py-10 w-full h-full"
-                style={{
-                  backgroundColor: '#030712',
-                }}
-              >
-                <Scroll>
-                  <div className="px-4 sm:px-6 lg:px-20 w-full h-full">
-                    <Outlet />
-                  </div>
-                </Scroll>
-              </main>
+            <div className="w-full h-full relative">
+              <div className="lg:pl-72 h-full">
+                <main
+                  className="py-10 w-full h-full"
+                  style={{
+                    backgroundColor: '#030712',
+                  }}
+                >
+                  <Scroll>
+                    <div className="px-4 sm:px-6 lg:px-20 w-full h-full">
+                      <Outlet />
+                    </div>
+                  </Scroll>
+                </main>
+              </div>
             </div>
           </div>
-        </div>
-      ),
-      path: '/',
-      children: [
-        {
-          path: '/',
-          index: true,
-          element: <InstallationPage />,
-        },
-        {
-          path: 'quick-start',
-          element: <QuickStartPage />,
-        },
-        {
-          path: 'event-store-provider',
-          element: <EventStoreProviderPage />,
-        },
-        {
-          path: 'mutations',
-          element: <MutationsPage />,
-        },
-        {
-          path: 'selector',
-          element: <SelectorPage />,
-        },
-        {
-          path: 'event-emitter',
-          element: <EventEmitterPage />,
-        },
-        {
-          path: 'example',
-          element: <ExamplePage />,
-        },
-        {
-          index: true,
-          element: <NotFound />,
-        },
-        {
-          path: '/*',
-          element: <NotFound />,
-        },
-      ],
-    },
-  ]);
+        ),
+        path: '/',
+        children: [
+          {
+            path: '/',
+            index: true,
+            element: <InstallationPage />,
+          },
+          {
+            path: 'quick-start',
+            element: <QuickStartPage />,
+          },
+          {
+            path: 'event-store-provider',
+            element: <EventStoreProviderPage />,
+          },
+          {
+            path: 'mutations',
+            element: <MutationsPage />,
+          },
+          {
+            path: 'selector',
+            element: <SelectorPage />,
+          },
+          {
+            path: 'event-emitter',
+            element: <EventEmitterPage />,
+          },
+          {
+            path: 'example',
+            element: <ExamplePage />,
+          },
+          {
+            index: true,
+            element: <NotFound />,
+          },
+          {
+            path: '/*',
+            element: <NotFound />,
+          },
+        ],
+      },
+    ],
+    {
+      basename: '/react-event-driven-store-web/',
+    }
+  );
