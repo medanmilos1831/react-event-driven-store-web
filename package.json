@@ -1,6 +1,6 @@
 {
-  "name": "react-event-driven-store-web",
-  "homepage": "https://medanmilos183.github.io/react-event-driven-store-web",
+  "name": "@react-event-driven-store-web/source",
+  "homepage": "https://medanmilos1831.github.io/react-event-driven-store-web",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
